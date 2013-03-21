@@ -1,6 +1,0 @@
-group goals
-definite milestones
-division of labor
-stretch goals
-will you release?
-what's the goal, if not release
