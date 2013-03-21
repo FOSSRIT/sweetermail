@@ -1,7 +1,0 @@
-[Activity]
-name = Sweetmail
-service_name = org.sugarlabs.Sweetmail
-class = sweetmail.SweetmailActivity
-icon = activity-sweetmail
-activity_version = 2
-show_launcher = yes
