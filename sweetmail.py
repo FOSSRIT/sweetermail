@@ -23,7 +23,7 @@ class HomeToolbar(activity.ActivityToolbar):
         self.share.props.visible = False
         self.canvas = None
     
-class MailActivityToolbox(activity.ActivityToolbox):
+class mailactivityToolbox(activity.ActivityToolbox):
     
     canvas_by_index = {}
 
@@ -48,16 +48,20 @@ class MailActivityToolbox(activity.ActivityToolbox):
         contacts_toolbar = contacts.ContactsToolbar(mailactivity)
         self.add_toolbar(_('Contacts'), contacts_toolbar)
         contacts_toolbar.show()
-        
-        configure_toolbar = configure.ConfigureToolbar(mailactivity)
-        self.add_toolbar(_('Configure'), configure_toolbar)
-        configure_toolbar.show()
+
+        #TODO
+        #Fix configure toolbar!
+
+        #configure_toolbar = configure.ConfigureToolbar(mailactivity)
+        #self.add_toolbar(_('Configure'), configure_toolbar)
+        #configure_toolbar.show()
         
         self.toolbars = {0: home_toolbar,
                          1: read_toolbar,
                          2: write_toolbar,
                          3: contacts_toolbar,
-                         4: configure_toolbar}
+                         #4: configure_toolbar
+                         }
         
         self.connect('current-toolbar-changed', self.__toolbar_changed_cb, mailactivity)
 
@@ -68,7 +72,7 @@ class MailActivityToolbox(activity.ActivityToolbox):
             mailactivity.set_canvas(canvas)
             canvas.show_all()
 
-class MailActivity(activity.Activity):
+class mailactivity(activity.Activity):
 
     def __init__(self, handle):
         gtk.gdk.threads_init()
@@ -79,7 +83,7 @@ class MailActivity(activity.Activity):
         
         self._ms = mailstore.MailStore(path_join(activity.get_activity_root(), 'data'))
         
-        toolbox = MailActivityToolbox(self)
+        toolbox = mailactivityToolbox(self)
         self.set_toolbox(toolbox)
         toolbox.show()
         
