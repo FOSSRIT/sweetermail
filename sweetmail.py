@@ -13,7 +13,7 @@ import mailstore
 import read
 #import write
 
-#from bgsrt import BGSRT # background send/receive thread ;p
+from bgsrt import BGSRT # background send/receive thread ;p
     
 class HomeToolbar(activity.ActivityToolbar):
     
@@ -88,8 +88,8 @@ class mailactivity(activity.Activity):
         
         toolbox.current_toolbar = 1 # default to 'Read' for now
         
-        #bgsrt = BGSRT(self)
-        #bgsrt.start()
+        bgsrt = BGSRT(self)
+        bgsrt.start()
 
 #        self.connect('visibility-notify-event', self.__visibility_notify_event_cb)
 #        self.connect('window-state-event', self.__window_state_event_cb)

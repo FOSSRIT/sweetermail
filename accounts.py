@@ -23,7 +23,7 @@ class Account():
         self._auth_type = auth_type
         self._username = username
         self._password = password
-'''
+
 class StoreAccount(Account):
     
     def __init__(self, host, port, auth_type, username, password, ):
@@ -32,7 +32,7 @@ class StoreAccount(Account):
 
     def retrieval_all(self, tracker):
         raise NotImplementedError
-
+'''
 class TransportAccount(Account):
     
     def __init__(self, from_addr, host, port, auth_type, username, password):

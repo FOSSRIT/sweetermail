@@ -15,7 +15,7 @@ class BGSRT(threading.Thread):
     def __init__(self, activity):
         threading.Thread.__init__(self)
         self._activity = activity
-        self._config = activity.config
+        #self._config = activity.config
         self._ms = activity.ms
 
     def _send(self):
@@ -24,11 +24,11 @@ class BGSRT(threading.Thread):
             return
         tracker = OutboundTracker(self._activity)
         msgs = [self._ms.get_msg(key) for key in unsent]
-        self._config.transport_account.send(msgs, tracker)
+        #self._config.transport_account.send(msgs, tracker)
     
     def _receive(self):
         tracker = InboundTracker(self._activity)
-        self._config.store_account.retrieve_all(tracker)
+        #self._config.store_account.retrieve_all(tracker)
 
     def run(self):
         while 1:

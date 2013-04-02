@@ -53,7 +53,7 @@ class ReadToolbar(gtk.Toolbar):
         self.insert(self._forward_button, -1)
         '''
     def _sendreceive_cb(self, *args):
-        pass
+        retrieve_all(bgsrt)
     '''
     def _reply_msg_cb(self, *args):
         pass
