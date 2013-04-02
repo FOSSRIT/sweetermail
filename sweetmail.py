@@ -8,12 +8,12 @@ from sugar.graphics.toolbox import Toolbox
 from os.path import join as path_join
 
 import configure
-import contacts
+#import contacts
 import mailstore
 import read
-import write
+#import write
 
-from bgsrt import BGSRT # background send/receive thread ;p
+#from bgsrt import BGSRT # background send/receive thread ;p
     
 class HomeToolbar(activity.ActivityToolbar):
     
@@ -40,26 +40,25 @@ class mailactivityToolbox(activity.ActivityToolbox):
         read_toolbar = read.ReadToolbar(mailactivity)
         self.add_toolbar(_('Read'), read_toolbar)
         read_toolbar.show()
-
+        '''
         write_toolbar = write.WriteToolbar(mailactivity)
         self.add_toolbar(_('Write'), write_toolbar)
         write_toolbar.show()
-        
+       
         contacts_toolbar = contacts.ContactsToolbar(mailactivity)
         self.add_toolbar(_('Contacts'), contacts_toolbar)
-        contacts_toolbar.show()
-
+        ontacts_toolbar.show()
+        '''
         #TODO
         #Fix configure toolbar!
-
         #configure_toolbar = configure.ConfigureToolbar(mailactivity)
         #self.add_toolbar(_('Configure'), configure_toolbar)
         #configure_toolbar.show()
         
-        self.toolbars = {0: home_toolbar,
+        self.toolbars =  {0: home_toolbar,
                          1: read_toolbar,
-                         2: write_toolbar,
-                         3: contacts_toolbar,
+                         #2: write_toolbar,
+                         #3: contacts_toolbar,
                          #4: configure_toolbar
                          }
         
@@ -79,7 +78,7 @@ class mailactivity(activity.Activity):
 
         activity.Activity.__init__(self, handle)
         
-        self._config = configure.Configuration()
+        #self._config = configure.Configuration()
         
         self._ms = mailstore.MailStore(path_join(activity.get_activity_root(), 'data'))
         
@@ -89,8 +88,8 @@ class mailactivity(activity.Activity):
         
         toolbox.current_toolbar = 1 # default to 'Read' for now
         
-        bgsrt = BGSRT(self)
-        bgsrt.start()
+        #bgsrt = BGSRT(self)
+        #bgsrt.start()
 
 #        self.connect('visibility-notify-event', self.__visibility_notify_event_cb)
 #        self.connect('window-state-event', self.__window_state_event_cb)
@@ -108,6 +107,6 @@ class mailactivity(activity.Activity):
             self._alerts.remove(alert)
             self._vbox.remove(alert)
             
-    config = property(lambda self: self._config)
+    #config = property(lambda self: self._config)
     
     ms = property(lambda self: self._ms)

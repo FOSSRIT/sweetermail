@@ -23,7 +23,7 @@ class Account():
         self._auth_type = auth_type
         self._username = username
         self._password = password
-
+'''
 class StoreAccount(Account):
     
     def __init__(self, host, port, auth_type, username, password, ):
@@ -53,3 +53,4 @@ class DummyStoreAccount():
     def retrieve_all(self, tracker):
         from tracker import notify
         notify(_('No store account cofigured'))
+'''
