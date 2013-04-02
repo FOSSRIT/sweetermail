@@ -38,11 +38,11 @@ class ReadToolbar(gtk.Toolbar):
     def __init__(self, activity):        
         gtk.Toolbar.__init__(self)
         self._activity = activity
-        self._canvas = None
 
         self._sendreceive_button = ToolButton('send-and-receive', tooltip=_('Send/receive email'))
         self._sendreceive_button.connect('clicked', self._sendreceive_cb)
         self.insert(self._sendreceive_button, -1)
+        self.show_all()
         '''
         self._reply_button = ToolButton('reply', tooltip=_('Write a reply'))
         self._reply_button.connect('clicked', self._reply_msg_cb)
