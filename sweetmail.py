@@ -79,7 +79,7 @@ class mailactivity(activity.Activity):
 
         activity.Activity.__init__(self, handle)
         
-        self._config = configure.Configuration()
+        #self._config = configure.Configuration()
         
         self._ms = mailstore.MailStore(path_join(activity.get_activity_root(), 'data'))
         
@@ -108,6 +108,6 @@ class mailactivity(activity.Activity):
             self._alerts.remove(alert)
             self._vbox.remove(alert)
             
-    config = property(lambda self: self._config)
+    #config = property(lambda self: self._config)
     
     ms = property(lambda self: self._ms)
