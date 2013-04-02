@@ -1,11 +1,13 @@
 import gtk
 import logging
+from bgsrt import BGSRT
 
 from gettext import gettext as _
 from sugar.graphics.toolbutton import ToolButton
 
 from taglist import TagList
 from msglist import MsgList
+
 
 class ReadCanvas(gtk.HBox):
     '''temporary playground'''
@@ -53,7 +55,7 @@ class ReadToolbar(gtk.Toolbar):
         self.insert(self._forward_button, -1)
         '''
     def _sendreceive_cb(self, *args):
-        retrieve_all(bgsrt)
+        BGSRT.run(bgsrt)
     '''
     def _reply_msg_cb(self, *args):
         pass

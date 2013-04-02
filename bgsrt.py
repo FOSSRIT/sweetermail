@@ -33,6 +33,6 @@ class BGSRT(threading.Thread):
     def run(self):
         while 1:
             if check_online():
-                self._send()
+                #self._send()
                 self._receive()
             time.sleep(self._config.send_receive_every * 60)
