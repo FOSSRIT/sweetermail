@@ -4,7 +4,7 @@ import logging
 from gettext import gettext as _
 from sugar.graphics.toolbutton import ToolButton
 
-#from taglist import TagList
+from taglist import TagList
 from msglist import MsgList
 
 class ReadCanvas(gtk.HBox):
@@ -14,12 +14,10 @@ class ReadCanvas(gtk.HBox):
         gtk.HBox.__init__(self)
         self.activity = activity
         self._ms = activity.ms
-        '''
         self.taglist = TagList(self._ms.tags)
         self.taglist.connect('tag-selected', self.__tag_selected_cb)
         self.pack_start(self.taglist, False, False)
-        self.taglist.show_all()
-        '''     
+        self.taglist.show_all()   
         self.msglist = MsgList(self._ms)
         self.pack_start(self.msglist)
         self.msglist.show_all()
@@ -45,7 +43,7 @@ class ReadToolbar(gtk.Toolbar):
         self._sendreceive_button = ToolButton('send-and-receive', tooltip=_('Send/receive email'))
         self._sendreceive_button.connect('clicked', self._sendreceive_cb)
         self.insert(self._sendreceive_button, -1)
-        
+        '''
         self._reply_button = ToolButton('reply', tooltip=_('Write a reply'))
         self._reply_button.connect('clicked', self._reply_msg_cb)
         self.insert(self._reply_button, -1)
@@ -53,12 +51,13 @@ class ReadToolbar(gtk.Toolbar):
         self._forward_button = ToolButton('forward', tooltip=_('Forward this message'))
         self._forward_button.connect('clicked', self._forward_msg_cb)
         self.insert(self._forward_button, -1)
-
+        '''
     def _sendreceive_cb(self, *args):
         pass
-
+    '''
     def _reply_msg_cb(self, *args):
         pass
     
     def _forward_msg_cb(self, *args):
         pass
+    '''
