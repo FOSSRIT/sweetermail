@@ -12,7 +12,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="add-attachment.svg">
+   sodipodi:docname="send-and-receive.svg">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -35,13 +35,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
+     inkscape:window-width="741"
      inkscape:window-height="480"
      id="namedview6"
      showgrid="false"
      inkscape:zoom="4.2909091"
      inkscape:cx="27.5"
-     inkscape:cy="27.5"
+     inkscape:cy="28.269845"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -51,23 +51,25 @@
      y="5"
      width="45"
      height="45"
-     style="fill:"
-     id="rect4" />
+     id="rect4"
+     style="fill:" />
   <text
      xml:space="preserve"
-     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="6.5254235"
-     y="25.169491"
+     style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+     x="17.421804"
+     y="16.750706"
      id="text2987"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan2989"
-       x="6.5254235"
-       y="25.169491"
-       style="font-size:13px;fill:#ffffff">add</tspan><tspan
+       x="17.421804"
+       y="16.750706">send</tspan><tspan
        sodipodi:role="line"
-       x="6.5254235"
-       y="41.419491"
-       id="tspan2991"
-       style="font-size:13px;fill:#ffffff">attach</tspan></text>
+       x="17.421804"
+       y="28.000706"
+       id="tspan2991">and </tspan><tspan
+       sodipodi:role="line"
+       x="17.421804"
+       y="39.250706"
+       id="tspan2993">recv</tspan></text>
 </svg>
