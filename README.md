@@ -22,6 +22,7 @@ _It's like foster care_
 ### stretch goals
 1. Make pretty icons and artwork
 1. SSL / TLS support
+
 ### Super Stretch (tm)
 1. openPGP
 
