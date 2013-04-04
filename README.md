@@ -2,7 +2,7 @@ SweeterMail
 ===========
 _It's like foster care_
 
-===To install:===
+---To install:---
 - get a reasonable linux dev environment
 - install sugar-build (http://sugarlabs.org/~buildbot/docs/build.html)
 - install sugar-emulator and sugar-session (package names may vary from distro to disro)
@@ -10,7 +10,7 @@ _It's like foster care_
 - run the emulator! (sugar-emulator -F for windowed mode)
 - see how shitty it looks!
 
-===TODO:===
+---TODO:---
 
 * ~~code review~~
 * ~~get this thing running~~
@@ -19,10 +19,10 @@ _It's like foster care_
 * configure.py needs _store_account implemented
 * get sending functional
 
-===stretch goals===
+---stretch goals---
 Make pretty icons and artwork
 SSL / TLS support
-===Super Stretch (tm)===
+---Super Stretch (tm)---
 openPGP
 
 The chain to read mail
