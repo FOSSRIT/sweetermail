@@ -88,7 +88,7 @@ class Configuration:
         try:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         #except NoOptionError:
-        #        kwds[field] = True
+                #kwds[field] = True
         self._store_account = POPStoreAccount(**kwds)
 
     # store_account
