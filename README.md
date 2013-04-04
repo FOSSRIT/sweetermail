@@ -10,6 +10,21 @@ To install:
 - see how shitty it looks!
 
 TODO:
+
+code review - done
+get this thing running - done
+find the applicable libraries - done
+get reading functional - in progress
+  configure.py needs _store_account implemented
+  
+get sending functional
+
+---stretch goals---
+Make pretty icons and artwork
+SSL / TLS support
+---Super Stretch (tm)---
+openPGP
+
 The chain to read mail
 sweetmail->read->pop->bgsrt
 '''python
