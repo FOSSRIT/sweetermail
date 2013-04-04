@@ -20,13 +20,14 @@ _It's like foster care_
 * get sending functional
 
 ### stretch goals
-Make pretty icons and artwork
-SSL / TLS support
+1. Make pretty icons and artwork
+1. SSL / TLS support
 ### Super Stretch (tm)
-openPGP
+1. openPGP
 
 The chain to read mail
 sweetmail->read->pop->bgsrt
 
 `python read._sendreceive_cb` needs to call the appropriate function to fetch mail.
+
 I'm not sure which one(s) it needs to call.
