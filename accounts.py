@@ -32,7 +32,7 @@ class StoreAccount(Account):
 
     def retrieval_all(self, tracker):
         raise NotImplementedError
-'''
+
 class TransportAccount(Account):
     
     def __init__(self, from_addr, host, port, auth_type, username, password):
@@ -53,4 +53,4 @@ class DummyStoreAccount():
     def retrieve_all(self, tracker):
         from tracker import notify
         notify(_('No store account cofigured'))
-'''
+
