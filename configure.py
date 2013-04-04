@@ -84,16 +84,16 @@ class Configuration:
 
     # transport_account
     def _parse_store(self):
-        kwds = _account_dict('store')
+        kwds = self._account_dict('store')
         try:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
-        except NoOptionError:
-                kwds[field] = True
+        #except NoOptionError:
+        #        kwds[field] = True
         self._store_account = POPStoreAccount(**kwds)
 
     # store_account
     def _parse_transport(self):
-        kwds = _account_dict('transport')
+        kwds = self._account_dict('transport')
         try:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:

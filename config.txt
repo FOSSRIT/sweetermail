@@ -1,0 +1,11 @@
+[sending]
+name = ["['sweetermail']"]
+address = ["['sweetermail@mew.don.gs']"]
+
+[store]
+host = "mail.mew.don.gs"
+port = 110
+auth_type = "POP3"
+username = "sweetermail@mew.don.gs"
+password = "sugar"
+
