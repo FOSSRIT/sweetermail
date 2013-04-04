@@ -1,7 +1,8 @@
 SweeterMail
 ===========
 _It's like foster care_
-To install:
+
+===To install:===
 - get a reasonable linux dev environment
 - install sugar-build (http://sugarlabs.org/~buildbot/docs/build.html)
 - install sugar-emulator and sugar-session (package names may vary from distro to disro)
@@ -9,26 +10,23 @@ To install:
 - run the emulator! (sugar-emulator -F for windowed mode)
 - see how shitty it looks!
 
-TODO:
+===TODO:===
 
-code review - done
-get this thing running - done
-find the applicable libraries - done
-get reading functional - in progress
-  configure.py needs _store_account implemented
-  
-get sending functional
+* ~~code review~~
+* ~~get this thing running~~
+* ~~find the applicable libraries~~
+* get reading functional - in progress
+* configure.py needs _store_account implemented
+* get sending functional
 
----stretch goals---
+===stretch goals===
 Make pretty icons and artwork
 SSL / TLS support
----Super Stretch (tm)---
+===Super Stretch (tm)===
 openPGP
 
 The chain to read mail
 sweetmail->read->pop->bgsrt
-'''python
-read._sendreceive_cb
-'''
-needs to call the appropriate function to fetch mail
+
+`python read._sendreceive_cb` needs to call the appropriate function to fetch mail.
 I'm not sure which one(s) it needs to call.
