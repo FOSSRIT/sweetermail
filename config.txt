@@ -9,3 +9,9 @@ auth_type = "POP3"
 username = "sweetermail@mew.don.gs"
 password = "sugar"
 
+[transport]
+host = "mail.mew.don.gs"
+port = 26
+auth_type = "SMTP"
+username = "sweetermail@mew.don.gs"
+password = "sugar"
