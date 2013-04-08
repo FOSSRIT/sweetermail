@@ -89,7 +89,7 @@ class Configuration:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:
                 kwds['del_on_retr'] = True
-        self._store_account = POPStoreAccount(**kwds)
+        self._store_account = self.POPStoreAccount(**kwds)
 
     # transport_account
     def _parse_transport(self):
@@ -98,9 +98,17 @@ class Configuration:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:
             kwds['del_on_retr'] = True
-        self._store_account = TransportAccount(**kwds)
+        self._store_account = self.TransportAccount(**kwds)
     
     @property
     def from_header(self):
         from email.utils import formataddr
         return formataddr((self.name, self.address))
+
+    def POPStoreAccount(self, **kwargs):
+        #TODO: implement POP account storage
+        return None
+
+    def TransportAccount(self, **kwargs):
+        #TODO: implement SMTP account storage
+        return None
