@@ -1,0 +1,68 @@
+Return-Path: <wxw7813@rit.edu>
+Delivered-To: unknown
+Received: from mail.mew.don.gs (199.48.254.80:110) by
+  icedwhiskers.student.rit.edu with POP3; 09 Apr 2013 22:19:53 -0000
+Envelope-to: sweetermail@mew.don.gs
+Delivery-date: Mon, 08 Apr 2013 14:22:22 -0400
+Received: from sc3app27.rit.edu ([129.21.35.56]:38358)
+	by web1.kwdservices.com with esmtps (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.80)
+	(envelope-from <wxw7813@rit.edu>)
+	id 1UPGhx-0005G2-4I
+	for sweetermail@mew.don.gs; Mon, 08 Apr 2013 14:22:21 -0400
+Received: from mail-ee0-f48.google.com (mail-ee0-f48.google.com [74.125.83.48])
+ by smtp-server.rit.edu (PMDF V6.3-x14 #31420)
+ with ESMTPSA id <0MKY00ILL8CXG3@smtp-server.rit.edu> for
+ sweetermail@mew.don.gs; Mon, 08 Apr 2013 14:22:10 -0400 (EDT)
+Received: by mail-ee0-f48.google.com with SMTP id b15so2439670eek.7 for
+ <sweetermail@mew.don.gs>; Mon, 08 Apr 2013 11:22:09 -0700 (PDT)
+Received: by 10.223.160.131 with HTTP; Mon, 08 Apr 2013 11:21:38 -0700 (PDT)
+X-Received: by 10.14.4.69 with SMTP id 45mr51828627eei.0.1365445328948; Mon,
+ 08 Apr 2013 11:22:08 -0700 (PDT)
+Date: Mon, 08 Apr 2013 14:21:38 -0400
+From: Wyatt Winters <wxw7813@rit.edu>
+Subject: I guess we should probably have mail
+To: sweetermail@mew.don.gs
+Message-id: <CALqOGXj67rW9W07-qjFUS=OG-e7SnrrXbnG6Ztm_rE2T=A5c+Q@mail.gmail.com>
+MIME-version: 1.0
+Content-type: multipart/alternative; boundary=047d7b66f1c7cb1eb004d9dd83b0
+X-RIT-Received-From: 74.125.83.48 wxw7813@smtp-server.rit.edu
+X-Spam-Status: No, score=-2.5
+X-Spam-Score: -24
+X-Spam-Bar: --
+X-Ham-Report: Spam detection software, running on the system "web1.kwdservices.com", has
+ identified this incoming email as possible spam.  The original message
+ has been attached to this so you can view it (if it isn't spam) or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ 
+ Content preview:  in this mailbox so we know when it works -- Wyatt Winters
+   in this mailbox so we know when it works [...] 
+ 
+ Content analysis details:   (-2.5 points, 5.0 required)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.5 RP_MATCHES_RCVD        Envelope sender domain matches handover relay domain
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 T_MANY_HDRS_LCASE      Odd capitalization of multiple message headers
+X-Spam-Flag: NO
+
+--047d7b66f1c7cb1eb004d9dd83b0
+Content-Type: text/plain; charset=ISO-8859-1
+
+in this mailbox
+so we know
+when it works
+
+
+-- 
+Wyatt Winters
+
+--047d7b66f1c7cb1eb004d9dd83b0
+Content-Type: text/html; charset=ISO-8859-1
+
+<div dir="ltr"><div>in this mailbox<br>so we know<br>when it works<br></div><br clear="all"><br>-- <br>Wyatt Winters<br>
+</div>
+
+--047d7b66f1c7cb1eb004d9dd83b0--
