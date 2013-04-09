@@ -47,7 +47,7 @@ class Configuration:
         
         # defaults
         self.name = get_nick_name()
-        self.sync_every = 10 # minutes
+        self.sync_every = 1 # minutes
         self.del_on_retr = True
         self.store_account = accounts.DummyStoreAccount()
         self.transport_account = accounts.DummyTransportAccount()
@@ -105,6 +105,7 @@ class Configuration:
         from email.utils import formataddr
         return formataddr((self.name, self.address))
 
+    #store accounts to config.txt 
     def POPStoreAccount(self, **kwargs):
         #TODO: implement POP account storage
         return None
