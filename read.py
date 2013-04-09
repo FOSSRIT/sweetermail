@@ -56,10 +56,10 @@ class ReadToolbar(gtk.Toolbar):
         '''
     def _sendreceive_cb(self, *args):
         pass
-    '''
+
     def _reply_msg_cb(self, *args):
         pass
     
     def _forward_msg_cb(self, *args):
         pass
-    '''
+
