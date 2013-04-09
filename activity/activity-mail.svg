@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14576)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" id="Ebene_2_Kopie" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="542px" height="354px" viewBox="0 0 542 354" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="270.9995" y1="1" x2="270.9995" y2="353.0005">
+	<stop offset="0" style="stop-color:#FFFFEB"/>
+	<stop offset="1" style="stop-color:#8F8F8F"/>
+</linearGradient>
+<rect x="1" y="1" fill="url(#SVGID_1_)" stroke="#575757" stroke-width="2" width="540" height="352"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="270.9995" y1="140" x2="270.9995" y2="353.0005">
+	<stop offset="0" style="stop-color:#FFFFEB"/>
+	<stop offset="1" style="stop-color:#8F8F8F"/>
+</linearGradient>
+<polygon fill="url(#SVGID_2_)" stroke="#575757" stroke-width="2" stroke-linejoin="round" points="541,353 271,140 1,353 "/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="271.0005" y1="201" x2="271.0005" y2="1.0005">
+	<stop offset="0" style="stop-color:#FFFFEB"/>
+	<stop offset="1" style="stop-color:#8F8F8F"/>
+</linearGradient>
+<polygon fill="url(#SVGID_3_)" stroke="#575757" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" points="1,1   271,201 541,1 "/>
+</svg>
