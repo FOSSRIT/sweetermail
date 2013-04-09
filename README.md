@@ -17,8 +17,8 @@ _It's like foster care_
 * ~~find the applicable libraries~~
 * get reading functional - in progress
   * configure.py needs _store_account implemented
-  * needs mail fetching
-  * needs mailbox functionality - ability to select and open messages
+  * needs mail fetching - wyatt can do this!
+  * needs mailbox functionality - ability to select and open messages - cody and alex can do this!
   * default to opening inbox tag
 * get sending functional
 
