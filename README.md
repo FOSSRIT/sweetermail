@@ -16,7 +16,9 @@ _It's like foster care_
 * ~~get this thing running~~
 * ~~find the applicable libraries~~
 * get reading functional - in progress
-* configure.py needs _store_account implemented
+  * configure.py needs _store_account implemented
+  * needs mail fetching
+  * needs mailbox functionality - ability to select and open messages
 * get sending functional
 
 ### stretch goals
