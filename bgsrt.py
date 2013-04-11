@@ -33,10 +33,10 @@ class BGSRT(threading.Thread):
 
     def run(self):
         while 1:
-            if check_online():
+            #if check_online():
                 #self._send()
-                self._receive()
-                logging.debug('in check_online loop')
+            self._receive()
+                #logging.debug('in check_online loop')
             logging.debug('In bgsrt')
             logging.debug(check_online())
             time.sleep(self._config.sync_every * 5)

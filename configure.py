@@ -48,8 +48,9 @@ class Configuration:
         # defaults
         self.name = get_nick_name()
         self.sync_every = 1 # minutes
-        self.del_on_retr = True
-        self.store_account = accounts.DummyStoreAccount()
+        self.del_on_retr = False
+        #self.store_account = accounts.DummyStoreAccount()
+        self.store_account = accounts.StoreAccount(1,2,3,4,5)
         self.transport_account = accounts.DummyTransportAccount()
         
         # now parse
@@ -88,7 +89,7 @@ class Configuration:
         try:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:
-                kwds['del_on_retr'] = True
+                kwds['del_on_retr'] = False
         self._store_account = self.POPStoreAccount(**kwds)
 
     # transport_account
@@ -97,7 +98,7 @@ class Configuration:
         try:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:
-            kwds['del_on_retr'] = True
+            kwds['del_on_retr'] = False
         self._store_account = self.TransportAccount(**kwds)
     
     @property

@@ -58,7 +58,7 @@ class ProgressTracker(object):
         self._alert = ProgressAlert()
 
         self._alert.props.title = title
-        self._activity.add_alert(self._alert)
+        #self._activity.add_alert(self._alert)
         
     def _remove_alert(self, *args):
         gtk.gdk.threads_enter()

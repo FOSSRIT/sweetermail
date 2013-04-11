@@ -27,8 +27,8 @@ class Account():
 class StoreAccount(Account):
     
     def __init__(self, host, port, auth_type, username, password, ):
-        Account.__init__(self, "mail.mew.don.gs", 110, POP3, "sweetermail@mew.don.gs", "sugar",)
-        self._del_on_retr = del_on_retr
+        Account.__init__(self, "mail.mew.don.gs", 110, "POP3", "sweetermail@mew.don.gs", "sugar",)
+        self._del_on_retr = False
 
     def retrieve_all(self, tracker):
         logging.debug('I\'m retrieve_all!')
