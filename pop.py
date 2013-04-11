@@ -28,7 +28,7 @@ class POPStoreAccount(StoreAccount):
         server.quit()
         
     def retrieve_all(self, tracker):
-
+        logger.debug('this is retrieve_all in pop.py')
         tracker.update(_('Connecting...'))
         try:
             server = self._connect()
