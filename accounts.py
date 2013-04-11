@@ -14,7 +14,7 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with Sweetmail.  If not, see <http://www.gnu.org/licenses/>.
-
+import logging
 class Account():
     
     def __init__(self, host, port, auth_type, username, password):
@@ -27,11 +27,11 @@ class Account():
 class StoreAccount(Account):
     
     def __init__(self, host, port, auth_type, username, password, ):
-        Account.__init__(self, host, port, auth_type, username, password)
+        Account.__init__(self, "mail.mew.don.gs", 110, POP3, "sweetermail@mew.don.gs", "sugar",)
         self._del_on_retr = del_on_retr
 
-    def retrieval_all(self, tracker):
-        raise NotImplementedError
+    def retrieve_all(self, tracker):
+        logging.debug('I\'m retrieve_all!')
 
 class TransportAccount(Account):
     
