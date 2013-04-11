@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="svg2614" sodipodi:version="0.32" inkscape:version="0.46" width="350" height="274" version="1.0" sodipodi:docname="envelope.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata id="metadata2619">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2617">
+    <inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 526.18109 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="744.09448 : 526.18109 : 1" inkscape:persp3d-origin="372.04724 : 350.78739 : 1" id="perspective2621"/>
+  </defs>
+  <sodipodi:namedview inkscape:window-height="706" inkscape:window-width="1366" inkscape:pageshadow="2" inkscape:pageopacity="0.0" guidetolerance="10.0" gridtolerance="10.0" objecttolerance="10.0" borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" id="base" showgrid="false" inkscape:zoom="1.5542857" inkscape:cx="175" inkscape:cy="137" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:current-layer="svg2614"/>
+  <image xlink:href="message_files/envelope.html" sodipodi:absref="C:\Users\biohazzard\Documents\SVG Files\Yo, Make me!\envelope.jpg" width="350" height="274" id="image2623" x="0" y="0"/>
+  <path style="fill:#000000" d="M 45,139.00377 L 45,42 L 174.00497,42 L 303.00995,42 L 302.75497,138.75 L 302.5,235.5 L 173.75,235.75377 L 45,236.00755 L 45,139.00377 z M 248.25561,186.75856 L 206.01417,144.51713 L 194.25709,156.15799 C 182.10638,168.18858 178.09137,171.02521 173.29966,170.96456 C 169.17438,170.91235 167.44002,169.64287 153.94959,156.80117 L 141.65978,145.10234 L 99.829888,186.17892 C 76.82345,208.77103 58,227.64801 58,228.12775 C 58,228.61908 108.76621,229 174.24852,229 L 290.49704,229 L 248.25561,186.75856 z M 94.248521,96.751479 L 52,54.502959 L 52,139 L 52,223.49704 L 94.248521,181.24852 L 136.49704,139 L 94.248521,96.751479 z M 296,138.91667 C 296,92.670833 295.63934,54.983333 295.19852,55.166667 C 294.75771,55.35 275.77241,74.312699 253.00897,97.305998 L 211.6209,139.112 L 253.55599,181.056 C 276.62028,204.1252 295.60558,223 295.74554,223 C 295.88549,223 296,185.1625 296,138.91667 z M 233.1087,106.75281 L 289.7174,49.5 L 231.8587,49.241942 C 200.03642,49.10001 147.7902,49.10001 115.75601,49.241942 L 57.51201,49.5 L 114.50601,106.78148 C 159.87121,152.3755 172.01009,164.0571 174,164.03429 C 175.96251,164.01178 188.67058,151.69656 233.1087,106.75281 z" id="path2625"/>
+</svg>
