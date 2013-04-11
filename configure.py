@@ -15,9 +15,11 @@
 from ConfigParser import SafeConfigParser as ConfigParser, NoOptionError
 import os
 import gtk
+import logging
 
 from sugar.profile import get_nick_name
 
+import pop
 import accounts
 
 class ConfigureCanvas(gtk.Button):
