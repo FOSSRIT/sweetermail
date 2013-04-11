@@ -4,6 +4,7 @@ import logging
 from sugar.graphics import style
 
 from staricon import StarIcon
+from mailicon import MailIcon
 
 class MessageEntry(hippo.CanvasBox):
     
@@ -27,6 +28,9 @@ class MessageEntry(hippo.CanvasBox):
         
         self.star_icon = self._create_star_icon()
         self.append(self.star_icon)
+
+        self.mail_icon = self._create_mail_icon()
+        self.append(self.mail_icon)
         
         self.what = self._create_what()
         self.append(self.what, hippo.PACK_EXPAND)
@@ -42,7 +46,14 @@ class MessageEntry(hippo.CanvasBox):
         star_icon.connect('button-release-event',
                           self.__star_icon_button_release_event_cb)
         return star_icon
-    
+
+    def _create_mail_icon(self):
+        mail_icon = MailIcon(False)
+        #TODO: implement the "open message yo" callback
+        mail_icon.connect('button-release-event',
+                          self.__mail_icon_button_release_event_cb)
+        return mail_icon
+
     def _create_what(self):
         what = hippo.CanvasText(text='',
                                  xalign=hippo.ALIGNMENT_START,
@@ -71,12 +82,18 @@ class MessageEntry(hippo.CanvasBox):
             self.props.background_color = style.COLOR_WHITE.get_int()
             
     def __star_icon_button_release_event_cb(self, button, event):
+        logging.debug("STAR BUTTON CLICKED")
         mobject = self._mobject
         if mobject.starred:
             mobject.unmark('starred')
         else:
             mobject.mark('starred')
         self.star_icon.props.star = mobject.starred
+        return True
+
+    def __mail_icon_button_release_event_cb(self, button, event):
+        mobject = self._mobject
+        logging.debug("MAIL BUTTON CLICKED")
         return True
     
     def set_selected(self, is_selected):
