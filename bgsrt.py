@@ -5,6 +5,7 @@ import email.utils
 import gtk
 import threading
 import time
+import logging
 
 from tracker import InboundTracker, OutboundTracker
 from tags import FLAGS
@@ -32,7 +33,10 @@ class BGSRT(threading.Thread):
 
     def run(self):
         while 1:
-            if check_online():
+            #if check_online():
                 #self._send()
-                self._receive()
-            time.sleep(self._config.sync_every * 60)
+            self._receive()
+                #logging.debug('in check_online loop')
+            logging.debug('In bgsrt')
+            logging.debug(check_online())
+            time.sleep(self._config.sync_every * 5)

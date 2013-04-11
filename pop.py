@@ -11,8 +11,8 @@ class POPError(Exception): pass
 
 class POPStoreAccount(StoreAccount):
 
-    def __init__(self, host, port, auth_type, username, password, del_on_retr=True):
-        StoreAccount.__init__(self, "mail.mew.don.gs", 110, POP3, "sweetermail@mew.don.gs", "sugar", del_on_retr)
+    def __init__(self, host, port, auth_type, username, password, del_on_retr=False):
+        StoreAccount.__init__(self, host, port, auth_type, username, password, del_on_retr)
 
     def _connect(self):
         cls = POP3_SSL if self._auth_type=='SSL' else POP3
@@ -28,7 +28,7 @@ class POPStoreAccount(StoreAccount):
         server.quit()
         
     def retrieve_all(self, tracker):
-
+        logger.debug('this is retrieve_all in pop.py')
         tracker.update(_('Connecting...'))
         try:
             server = self._connect()

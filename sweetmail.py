@@ -74,6 +74,7 @@ class mailactivityToolbox(activity.ActivityToolbox):
 class mailactivity(activity.Activity):
 
     def __init__(self, handle):
+        logging.debug('in init of sweetermail.py')
         gtk.gdk.threads_init()
 
         activity.Activity.__init__(self, handle)
@@ -93,7 +94,7 @@ class mailactivity(activity.Activity):
         
         bgsrt = BGSRT(self)
         bgsrt.start()
-
+        logging.debug('after bgsrt.start')
 #        self.connect('visibility-notify-event', self.__visibility_notify_event_cb)
 #        self.connect('window-state-event', self.__window_state_event_cb)
 
