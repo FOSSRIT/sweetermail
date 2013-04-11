@@ -59,4 +59,4 @@ def check_online():
     'returns True if active network connection, False otherwise'
     bus = dbus.SystemBus()
     proxy = bus.get_object('org.freedesktop.NetworkManager', '/org/freedesktop/NetworkManager')        
-    return (proxy.state()==70 || proxy.state()==3) #This used to be 3; new versions of nm seem to call it 70.
+    return (proxy.state()==70 or proxy.state()==3) #This used to be 3; new versions of nm seem to call it 70.
