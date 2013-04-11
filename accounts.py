@@ -31,7 +31,7 @@ class StoreAccount(Account):
         self._del_on_retr = False
 
     def retrieve_all(self, tracker):
-        logging.debug('I\'m retrieve_all!')
+        logging.debug('I\'m retrieve_all in accounts.py!')
 
 class TransportAccount(Account):
     
