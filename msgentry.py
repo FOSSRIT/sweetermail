@@ -82,7 +82,6 @@ class MessageEntry(hippo.CanvasBox):
             self.props.background_color = style.COLOR_WHITE.get_int()
             
     def __star_icon_button_release_event_cb(self, button, event):
-        logging.debug("STAR BUTTON CLICKED")
         mobject = self._mobject
         if mobject.starred:
             mobject.unmark('starred')
@@ -93,7 +92,7 @@ class MessageEntry(hippo.CanvasBox):
 
     def __mail_icon_button_release_event_cb(self, button, event):
         mobject = self._mobject
-        logging.debug("MAIL BUTTON CLICKED")
+        
         return True
     
     def set_selected(self, is_selected):
