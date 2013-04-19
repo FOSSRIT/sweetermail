@@ -96,6 +96,7 @@ class InboundTracker(ProgressTracker):
         else:
             ms.associate(HARDCODED['inbox'], key)
         '''
+        ms.associate(HARDCODED['inbox'], key)
 class OutboundTracker(ProgressTracker):
     
     def __init__(self, activity):

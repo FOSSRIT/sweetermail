@@ -33,13 +33,8 @@ class BGSRT(threading.Thread):
         
 
     def run(self):
-        while 1:
-            if check_online():
-                #self._send()
-                self._receive()
-                logging.debug('in check_online loop')
-            logging.debug('In bgsrt')
-            #*60 makes configure.py's time in minutes correct
-            #time.sleep(self._config.sync_every * 60)
-            #*5 for debuggin'!
-            time.sleep(self._config.sync_every * 5)
+        if check_online():
+            #self._send()
+            self._receive()
+        if not check_online():
+            logging.debug("We're not online!")
