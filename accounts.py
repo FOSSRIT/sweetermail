@@ -33,8 +33,6 @@ class Account():
 class StoreAccount(Account):
     
     def __init__(self, host, port, auth_type, username, password, del_on_retr):
-        #hardcoded mail credentials! this should be updated once configure.py is implemented!
-        logging.debug("this shit's broke yo")
         Account.__init__(self, host, port, auth_type, username, password)
         self._del_on_retr = False
 
