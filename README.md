@@ -16,9 +16,7 @@ _It's like foster care_
 * ~~get this thing running~~
 * ~~find the applicable libraries~~
 * get reading functional - in progress
-  * configure.py needs _store_account implemented
-  * needs mail fetching - wyatt can do this!
-    * How do we get retrieve_all from pop.py to run?
+  * ~~needs mail fetching - wyatt can do this!~~
   * needs mailbox functionality - ability to select and open messages - kody and alex can do this!
   * default to opening inbox tag
 * get sending functional
