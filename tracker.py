@@ -90,11 +90,12 @@ class InboundTracker(ProgressTracker):
         ms = self._activity.ms
         key = ms.add_msg(msg)
         # gmail sent emails hack
+        '''
         if email.utils.parseaddr(msg['From'])[1]==self._activity.config.transport_account._from_addr:
             ms.flag(key, FLAGS['sent'])
         else:
             ms.associate(HARDCODED['inbox'], key)
-
+        '''
 class OutboundTracker(ProgressTracker):
     
     def __init__(self, activity):
