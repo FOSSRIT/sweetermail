@@ -19,7 +19,6 @@ import logging
 
 from sugar.profile import get_nick_name
 
-import pop
 import accounts
 
 class ConfigureCanvas(gtk.Button):
@@ -49,19 +48,17 @@ class Configuration:
         ### public options ###
         
         # defaults
-        #self.name = get_nick_name()
+        self.name = get_nick_name()
         
-        self.name = "dingbat"
-        self.sync_every = 1 # minutes
+        #self.name = "dingbat"
         self.del_on_retr = False
         self.store_account = accounts.DummyStoreAccount()
-        #store_account is hard coded in accounts.py for now
-        self.store_account = accounts.POPStoreAccount("mew.don.gs", 110, "insecure", "sweetermail@mew.don.gs", "sugar", False)
+        #self.store_account = accounts.POPStoreAccount("mew.don.gs", 110, "insecure", "sweetermail@mew.don.gs", "sugar", False)
         self.transport_account = accounts.DummyTransportAccount()
         
         # now parse (from the config file at "activityroot"/data/config.txt")
-        #self._parse_profile()
-        #self._parse_store()
+        self._parse_profile()
+        self._parse_store()
         #self._parse_transport()
 
     def __del__(self):
@@ -93,11 +90,12 @@ class Configuration:
     # store_account
     def _parse_store(self):
         kwds = self._account_dict('store')
+        logging.debug(kwds)
         try:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:
                 kwds['del_on_retr'] = False
-        self._store_account = pop.POPStoreAccount(**kwds)
+        self.store_account = accounts.POPStoreAccount(**kwds)
                 
     '''
     # transport_account
@@ -107,18 +105,9 @@ class Configuration:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:
             kwds['del_on_retr'] = False
-        self._store_account = self.TransportAccount(**kwds)
+        self.transport_account = self.TransportAccount(**kwds)
     '''
     @property
     def from_header(self):
         from email.utils import formataddr
         return formataddr((self.name, self.address))
-
-    #store accounts to config.txt 
-    #def POPStoreAccount(self, **kwargs):
-        #TODO: implement POP account storage
-        #return None
-
-    def TransportAccount(self, **kwargs):
-        #TODO: implement SMTP account storage
-        return None

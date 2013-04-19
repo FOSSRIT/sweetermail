@@ -52,8 +52,7 @@ class mailactivityToolbox(activity.ActivityToolbox):
         contacts_toolbar = contacts.ContactsToolbar(mailactivity)
         self.add_toolbar(_('Contacts'), contacts_toolbar)
         ontacts_toolbar.show()
-        #TODO
-        #Fix configure toolbar!
+
         configure_toolbar = configure.ConfigureToolbar(mailactivity)
         self.add_toolbar(_('Configure'), configure_toolbar)
         configure_toolbar.show()
@@ -77,7 +76,6 @@ class mailactivityToolbox(activity.ActivityToolbox):
 class mailactivity(activity.Activity):
 
     def __init__(self, handle):
-        logging.debug('in init of sweetermail.py')
         gtk.gdk.threads_init()
 
         activity.Activity.__init__(self, handle)
@@ -95,7 +93,6 @@ class mailactivity(activity.Activity):
         toolbox.show()
         
         toolbox.current_toolbar = 1 # default to 'Read' for now
-        
         bgsrt = BGSRT(self)
         bgsrt.start()
 #        self.connect('visibility-notify-event', self.__visibility_notify_event_cb)
