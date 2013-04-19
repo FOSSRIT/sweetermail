@@ -35,7 +35,8 @@ class ConfigureToolbar(gtk.Toolbar):
         
 class Configuration:
     
-    def __init__(self, cfg_file):        
+    def __init__(self, cfg_file): 
+               
         self._cfg_file = cfg_file
         
         if not os.path.exists(self._cfg_file): # create it
@@ -48,17 +49,20 @@ class Configuration:
         ### public options ###
         
         # defaults
-        self.name = get_nick_name()
+        #self.name = get_nick_name()
+        
+        self.name = "dingbat"
         self.sync_every = 1 # minutes
         self.del_on_retr = False
-        #self.store_account = accounts.DummyStoreAccount()
-        self.store_account = accounts.StoreAccount(1,2,3,4,5)
+        self.store_account = accounts.DummyStoreAccount()
+        #store_account is hard coded in accounts.py for now
+        #self.store_account = accounts.StoreAccount(1,2,3,4,5)
         self.transport_account = accounts.DummyTransportAccount()
         
-        # now parse
-        self._parse_profile()
+        # now parse (from the config file at "activityroot"/data/config.txt")
+        #self._parse_profile()
         self._parse_store()
-        self._parse_transport()
+        #self._parse_transport()
 
     def __del__(self):
         fp = open(self._cfg_file, 'w')
@@ -76,6 +80,7 @@ class Configuration:
         kwds['port'] = int(kwds['port'])
         return kwds
 
+    '''
     # name, address, sync_every
     def _parse_profile(self):
         sec = 'sending'
@@ -84,7 +89,7 @@ class Configuration:
             self.address = self._cp.get(sec, 'address')
         except NoOptionError:
             pass
-
+    '''
     # store_account
     def _parse_store(self):
         kwds = self._account_dict('store')
@@ -92,8 +97,28 @@ class Configuration:
             kwds['del_on_retr'] = self._cp.getboolean('store', 'delete_on_retrieval')
         except NoOptionError:
                 kwds['del_on_retr'] = False
-        self._store_account = self.POPStoreAccount(**kwds)
-
+        self._store_account = pop.POPStoreAccount(**kwds)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    '''
     # transport_account
     def _parse_transport(self):
         kwds = self._account_dict('transport')
@@ -102,16 +127,16 @@ class Configuration:
         except NoOptionError:
             kwds['del_on_retr'] = False
         self._store_account = self.TransportAccount(**kwds)
-    
+    '''
     @property
     def from_header(self):
         from email.utils import formataddr
         return formataddr((self.name, self.address))
 
     #store accounts to config.txt 
-    def POPStoreAccount(self, **kwargs):
+    #def POPStoreAccount(self, **kwargs):
         #TODO: implement POP account storage
-        return None
+        #return None
 
     def TransportAccount(self, **kwargs):
         #TODO: implement SMTP account storage

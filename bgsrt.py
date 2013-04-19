@@ -30,6 +30,7 @@ class BGSRT(threading.Thread):
     def _receive(self):
         tracker = InboundTracker(self._activity)
         self._config.store_account.retrieve_all(tracker)
+        
 
     def run(self):
         while 1:
@@ -38,4 +39,7 @@ class BGSRT(threading.Thread):
                 self._receive()
                 logging.debug('in check_online loop')
             logging.debug('In bgsrt')
+            #*60 makes configure.py's time in minutes correct
+            #time.sleep(self._config.sync_every * 60)
+            #*5 for debuggin'!
             time.sleep(self._config.sync_every * 5)

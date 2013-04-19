@@ -8,9 +8,11 @@ from sugar.graphics.toolbox import Toolbox
 from os.path import join as path_join
 
 import configure
-#import contacts
 import mailstore
 import read
+
+#let's focus on reading for now!
+#import contacts
 #import write
 
 from bgsrt import BGSRT # background send/receive thread ;p
@@ -40,6 +42,8 @@ class mailactivityToolbox(activity.ActivityToolbox):
         read_toolbar = read.ReadToolbar(mailactivity)
         self.add_toolbar(_('Read'), read_toolbar)
         read_toolbar.show()
+        
+        #if it's not reading or getting mail, we don't need it right now!
         '''
         write_toolbar = write.WriteToolbar(mailactivity)
         self.add_toolbar(_('Write'), write_toolbar)
@@ -48,13 +52,12 @@ class mailactivityToolbox(activity.ActivityToolbox):
         contacts_toolbar = contacts.ContactsToolbar(mailactivity)
         self.add_toolbar(_('Contacts'), contacts_toolbar)
         ontacts_toolbar.show()
-        '''
         #TODO
         #Fix configure toolbar!
-        #configure_toolbar = configure.ConfigureToolbar(mailactivity)
-        #self.add_toolbar(_('Configure'), configure_toolbar)
-        #configure_toolbar.show()
-        
+        configure_toolbar = configure.ConfigureToolbar(mailactivity)
+        self.add_toolbar(_('Configure'), configure_toolbar)
+        configure_toolbar.show()
+        '''
         self.toolbars =  {0: home_toolbar,
                          1: read_toolbar,
                          #2: write_toolbar,
@@ -79,10 +82,11 @@ class mailactivity(activity.Activity):
 
         activity.Activity.__init__(self, handle)
         
+        #the config file goes in the data directory of the activity!
         configFilePath = self.get_activity_root() #
         configFilePath += "/data/config.txt"
         
-        self._config = configure.Configuration(configFilePath )
+        self._config = configure.Configuration(configFilePath)
         
         self._ms = mailstore.MailStore(path_join(activity.get_activity_root(), 'data'))
         

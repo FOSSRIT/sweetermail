@@ -27,7 +27,9 @@ class Account():
 class StoreAccount(Account):
     
     def __init__(self, host, port, auth_type, username, password, ):
-        Account.__init__(self, "mail.mew.don.gs", 110, "POP3", "sweetermail@mew.don.gs", "sugar",)
+        #hardcoded mail credentials! this should be updated once configure.py is implemented!
+        logging.debug("this shit's broke yo")
+        Account.__init__(self, host, port, auth_type, username, password)
         self._del_on_retr = False
 
     def retrieve_all(self, tracker):
@@ -42,6 +44,7 @@ class TransportAccount(Account):
     def send(self, msgs, tracker):
         raise NotImplementedError
 
+#why are these even here?
 class DummyTransportAccount():
     
     def send(self, msgs, tracker):
