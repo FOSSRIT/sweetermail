@@ -35,6 +35,7 @@ class BGSRT(threading.Thread):
     def run(self):
         if check_online():
             #self._send()
+            logging.debug("We're online!")
             self._receive()
         if not check_online():
             logging.debug("We're not online!")

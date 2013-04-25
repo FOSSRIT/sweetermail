@@ -93,6 +93,7 @@ class mailactivity(activity.Activity):
         toolbox.show()
         
         toolbox.current_toolbar = 1 # default to 'Read' for now
+        logging.debug("before bgsrt!")
         bgsrt = BGSRT(self)
         bgsrt.start()
 #        self.connect('visibility-notify-event', self.__visibility_notify_event_cb)

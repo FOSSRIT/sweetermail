@@ -20,6 +20,7 @@ import mailbox
 import os
 import sqlite3 as sqlite
 import threading
+import logging
 
 from gettext import gettext as _
 
@@ -100,6 +101,14 @@ class MailStore(object):
         key = self.maildir.add(msg)
         (frm, to, subj, date) = self._extract_headers(msg)
         con = self.get_connection()
+        #working on ignoring duplicate messages
+        '''
+        messageExists=con.execute('SELECT * from metadata where key = ? AND flags = ? AND hdr_from = ? AND hdr_to = ? AND hdr_subj = ? AND hdr_date = ?',
+                         (key, flags, frm, to, subj, date))
+        if messageExists:
+            logging.debug("Duplicate message detected! Not adding to database.")
+            return -1
+        '''
         con.execute('INSERT INTO metadata VALUES (?,?,?,?,?,?)',
                          (key, flags, frm, to, subj, date))
         con.commit()

@@ -30,6 +30,7 @@ _It's like foster care_
   * needs mailbox functionality - ability to select and open messages - kody and alex can do this!
   * default to opening inbox tag
   * send receive button needs to call bgsrt.run()
+  * stop downloading messages that we already have! Compare against metadata.db?
 * get sending functional
 
 ### stretch goals

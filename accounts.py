@@ -18,6 +18,7 @@ import logging
 
 from gettext import gettext as _
 from poplib import POP3, POP3_SSL
+from email.parser import HeaderParser
 
 
 _ok = lambda resp: True if resp.startswith('+OK') else False
@@ -81,6 +82,7 @@ class POPStoreAccount(StoreAccount):
             return
         num_msgs = len(msg_list)
         if num_msgs==0:
+            logging.debug("No mail!")
             tracker.done()
             server.quit()
             return
@@ -95,6 +97,7 @@ class POPStoreAccount(StoreAccount):
                 tracker.error(_('Error retrieving message.')) # so?!
                 server.quit()
                 return
+            
             tracker.dump_msg('\n'.join(lines))
         
             if (self._del_on_retr and
