@@ -89,6 +89,9 @@ class InboundTracker(ProgressTracker):
         msg = email.message_from_string(msg_str)
         ms = self._activity.ms
         key = ms.add_msg(msg)
+        #if add_msg thinks it's a duplicate, don't associate it
+        if key == -1:
+            pass
         # gmail sent emails hack
         '''
         if email.utils.parseaddr(msg['From'])[1]==self._activity.config.transport_account._from_addr:

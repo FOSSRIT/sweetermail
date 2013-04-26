@@ -44,6 +44,7 @@ class MailStore(object):
         self._cons = {}
         
         con = self.get_connection()
+        cur = con.cursor()
         con.executescript('''
             CREATE TABLE IF NOT EXISTS tags (
                 type INTEGER NOT NULL,
@@ -68,6 +69,14 @@ class MailStore(object):
                 hdr_date TEXT NOT NULL
             );
         ''')
+        
+        #check if the "duplicate placeholder" exists in the db
+        #create if it doesn't
+        cur.execute('SELECT * FROM metadata WHERE key = -1')
+        DupePlaceholder=cur.fetchall()
+        if DupePlaceholder is None:
+            con.execute('INSERT INTO metadata VALUES (-1,-2,-3,-4,-5,-6)')
+        
         con.commit()
 
         self._tags = TagStore(self)
@@ -78,6 +87,8 @@ class MailStore(object):
         for con in self._cons.values():
             con.close()
 
+    
+        
     def get_connection(self):
         t = threading.currentThread()
         try:
@@ -98,17 +109,22 @@ class MailStore(object):
 
     def add_msg(self, msg, flags=0):
         'msg arg should be email.message.Message instance'
+
+        #do we have this mail message?
+        newmid = msg['Message-Id']
+        logging.debug("newmid " + newmid)
+        for (key, message) in self.maildir.iteritems():
+            oldmid = message['Message-Id']
+            logging.debug("oldmid " + oldmid)
+            # If we have seen this Message ID before,
+            # remember it for deletion
+            if newmid == oldmid:
+                logging.debug("we have that message already!")
+                return -1
+        #if we don't have it, add it!
         key = self.maildir.add(msg)
         (frm, to, subj, date) = self._extract_headers(msg)
         con = self.get_connection()
-        #working on ignoring duplicate messages
-        '''
-        messageExists=con.execute('SELECT * from metadata where key = ? AND flags = ? AND hdr_from = ? AND hdr_to = ? AND hdr_subj = ? AND hdr_date = ?',
-                         (key, flags, frm, to, subj, date))
-        if messageExists:
-            logging.debug("Duplicate message detected! Not adding to database.")
-            return -1
-        '''
         con.execute('INSERT INTO metadata VALUES (?,?,?,?,?,?)',
                          (key, flags, frm, to, subj, date))
         con.commit()

@@ -15,10 +15,9 @@
 # You should have received a copy of the GNU General Public License
 # along with Sweetmail.  If not, see <http://www.gnu.org/licenses/>.
 import logging
-
 from gettext import gettext as _
 from poplib import POP3, POP3_SSL
-from email.parser import HeaderParser
+
 
 
 _ok = lambda resp: True if resp.startswith('+OK') else False
@@ -54,7 +53,8 @@ class POPStoreAccount(StoreAccount):
         if (server is None) or (not self._authenticate(server)):
             raise POPError
         server.quit()
-        
+    
+
     def retrieve_all(self, tracker):
         tracker.update(_('Connecting...'))
         logging.debug('Connecting...')
@@ -97,7 +97,6 @@ class POPStoreAccount(StoreAccount):
                 tracker.error(_('Error retrieving message.')) # so?!
                 server.quit()
                 return
-            
             tracker.dump_msg('\n'.join(lines))
         
             if (self._del_on_retr and

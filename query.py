@@ -16,8 +16,12 @@ import logging
 
 def search(store, query, offset=0, limit=1000):
     keys = store.associated_keys(query['tag'])
+    keys[:] = [x for x in keys if x != "-1"]
     total = len(keys)
     keys = keys[offset:]
+    logging.debug("keys")
+    for key in keys:
+        logging.debug(key)
     if len(keys) <= limit:
         res = [store.get_msg_info(key) for key in keys]
     else:
