@@ -37,6 +37,7 @@ _It's like foster care_
 ### stretch goals
 1. Make pretty icons and artwork
 1. SSL / TLS support
+   I think this is actually pretty trivial - set the "auth_type" in config.txt to "SSL"?
 1. attachment / image support
 1. better error reporting besides a log file
 
