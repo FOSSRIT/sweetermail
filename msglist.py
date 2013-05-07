@@ -51,7 +51,7 @@ class MsgList(gtk.HBox):
                                     background_color=style.COLOR_WHITE.get_int())
         self._canvas = hippo.Canvas()
         self._canvas.set_root(self._box)
-        
+
         self.pack_start(self._canvas)
         self._canvas.show()
         
@@ -138,7 +138,8 @@ class MsgList(gtk.HBox):
             except Exception:
                 logging.error('Exception while displaying entry:\n' + \
                     ''.join(traceback.format_exception(*sys.exc_info())))
-        
+
+
     def create_entry(self):
         return MessageEntry()
     
@@ -148,7 +149,7 @@ class MsgList(gtk.HBox):
         if self._page_size > 0:
             self.refresh()
     
-    def refresh(self):
+    def refresh(self, message_mode=FALSE, message=None):
         if self._result_set:
             self._result_set.destroy()
         self._result_set = query.find(self._store, self._query)
@@ -163,6 +164,8 @@ class MsgList(gtk.HBox):
                 self._show_message(NO_MATCH)
             else:
                 self._show_message(NOTHING_TO_SHOW)
+        elif message_mode:
+            self._show_message("Barnacles (this would be a message ideally)")
         else:
             self._clear_message()
             self._do_scroll(force=True)

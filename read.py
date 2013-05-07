@@ -15,6 +15,7 @@ class ReadCanvas(gtk.HBox):
     def __init__(self, activity):
         gtk.HBox.__init__(self)
         self.activity = activity
+        self.activity.readpane = self
         self._ms = activity.ms
         self.taglist = TagList(self._ms.tags)
         self.taglist.connect('tag-selected', self.__tag_selected_cb)

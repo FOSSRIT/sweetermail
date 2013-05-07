@@ -7,7 +7,7 @@ from staricon import StarIcon
 from mailicon import MailIcon
 
 class MessageEntry(hippo.CanvasBox):
-    
+    self.activity = activity;
     _WHO_COL_WIDTH = style.GRID_CELL_SIZE * 4
     _WHEN_COL_WIDTH = style.GRID_CELL_SIZE * 3
     
@@ -92,7 +92,8 @@ class MessageEntry(hippo.CanvasBox):
 
     def __mail_icon_button_release_event_cb(self, button, event):
         mobject = self._mobject
-        
+        logging.debug("Contents of potatoes: " + self.activity.readpane)
+        self.activity.readpane.msglist.refresh(True)
         return True
     
     def set_selected(self, is_selected):
