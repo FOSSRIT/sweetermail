@@ -92,7 +92,7 @@ class MessageEntry(hippo.CanvasBox):
 
     def __mail_icon_button_release_event_cb(self, button, event):
         mobject = self._mobject
-        self.activity.readpane.msglist.refresh(True)
+        self.activity.readpane.msglist.refresh(True, self._mobject)
         return True
     
     def set_selected(self, is_selected):

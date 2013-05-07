@@ -166,7 +166,7 @@ class MsgList(gtk.HBox):
             else:
                 self._show_message(NOTHING_TO_SHOW)
         elif message_mode:
-            self._show_message("Barnacles (this would be a message ideally)")
+            self._show_mobject(message)
         else:
             self._clear_message()
             self._do_scroll(force=True)
@@ -266,6 +266,37 @@ class MsgList(gtk.HBox):
         
         box.append(icon)
         box.append(text)
+        self._canvas.set_root(box)
+
+    def _show_mobject(self, mobject):
+        box = hippo.CanvasBox(orientation=hippo.ORIENTATION_VERTICAL,
+                              background_color=style.COLOR_GREY.get_int(),
+                              yalign=hippo.ALIGNMENT_CENTER)
+        icon = CanvasIcon(size=style.ICON_SIZE,
+                          file_name='icons/back.svg',
+                          stroke_color=style.COLOR_BUTTON_WHITE.get_svg(),
+                          fill_color=style.COLOR_TRANSPARENT.get_svg())
+        sender = hippo.CanvasText(text="From: "+mobject.who,
+                                xalign=hippo.ALIGNMENT_CENTER,
+                                font_desc=style.FONT_NORMAL.get_pango_desc(),
+                                color=style.COLOR_BUTTON_GREY.get_int())
+
+        what = hippo.CanvasText(text="Subject: "+mobject.what,
+                                xalign=hippo.ALIGNMENT_CENTER,
+                                font_desc=style.FONT_NORMAL.get_pango_desc(),
+                                color=style.COLOR_BUTTON_GREY.get_int())
+
+        when = hippo.CanvasText(text="Date: "+mobject.when,
+                                xalign=hippo.ALIGNMENT_CENTER,
+                                font_desc=style.FONT_NORMAL.get_pango_desc(),
+                                color=style.COLOR_BUTTON_GREY.get_int())
+
+	
+        
+        box.append(icon)
+        box.append(who)
+        box.append(what)
+        box.append(when)
         self._canvas.set_root(box)
         
     def _clear_message(self):
