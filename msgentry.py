@@ -92,7 +92,6 @@ class MessageEntry(hippo.CanvasBox):
 
     def __mail_icon_button_release_event_cb(self, button, event):
         mobject = self._mobject
-        logging.debug("Contents of potatoes: " + self.activity.readpane)
         self.activity.readpane.msglist.refresh(True)
         return True
     
