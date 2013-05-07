@@ -29,14 +29,15 @@ _It's like foster care_
   * ~~needs mail fetching - wyatt can do this!~~
   * needs mailbox functionality - ability to select and open messages - kody and alex can do this!
   * default to opening inbox tag
-  * send receive button needs to call bgsrt.run()
+  * ~~send receive button needs to call bgsrt.run()~~
   * stop downloading messages that we already have! ~~Compare against metadata.db?~~
-    * get Message-Id from remote mailbox?
+    * get *just* Message-Id from remote mailbox?
 * get sending functional
 
 ### stretch goals
 1. Make pretty icons and artwork
 1. SSL / TLS support
+   I think this is actually pretty trivial - set the "auth_type" in config.txt to "SSL"?
 1. attachment / image support
 1. better error reporting besides a log file
 

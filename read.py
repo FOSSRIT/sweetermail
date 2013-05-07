@@ -1,6 +1,6 @@
 import gtk
 import logging
-from bgsrt import BGSRT
+import sweetmail
 
 from gettext import gettext as _
 from sugar.graphics.toolbutton import ToolButton
@@ -56,8 +56,7 @@ class ReadToolbar(gtk.Toolbar):
         self.insert(self._forward_button, -1)
         '''
     def _sendreceive_cb(self, *args):
-        pass
-
+        sweetmail.mailactivity.run_bgsrt_once(self._activity)
     def _reply_msg_cb(self, *args):
         pass
     

@@ -93,12 +93,14 @@ class mailactivity(activity.Activity):
         toolbox.show()
         
         toolbox.current_toolbar = 1 # default to 'Read' for now
-        logging.debug("before bgsrt!")
+        bgsrt = BGSRT(self)
+        bgsrt.start()
+    def run_bgsrt_once(self):
         bgsrt = BGSRT(self)
         bgsrt.start()
 #        self.connect('visibility-notify-event', self.__visibility_notify_event_cb)
 #        self.connect('window-state-event', self.__window_state_event_cb)
-
+    
     # overriding add_alert and remove_alert; want more than one visible
     def add_alert(self, alert):
         alert.show()
