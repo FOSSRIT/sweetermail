@@ -7,12 +7,12 @@ from staricon import StarIcon
 from mailicon import MailIcon
 
 class MessageEntry(hippo.CanvasBox):
-    self.activity = activity;
+    
     _WHO_COL_WIDTH = style.GRID_CELL_SIZE * 4
     _WHEN_COL_WIDTH = style.GRID_CELL_SIZE * 3
     
     def __init__(self):
-        
+        self.activity = activity;
         hippo.CanvasBox.__init__(self,
                                  spacing=style.DEFAULT_SPACING,
                                  padding_top=style.DEFAULT_PADDING,

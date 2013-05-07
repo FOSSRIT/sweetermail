@@ -149,7 +149,7 @@ class MsgList(gtk.HBox):
         if self._page_size > 0:
             self.refresh()
     
-    def refresh(self, message_mode=FALSE, message=None):
+    def refresh(self, message_mode=False, message=None):
         if self._result_set:
             self._result_set.destroy()
         self._result_set = query.find(self._store, self._query)
