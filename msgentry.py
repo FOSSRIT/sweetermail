@@ -11,7 +11,7 @@ class MessageEntry(hippo.CanvasBox):
     _WHO_COL_WIDTH = style.GRID_CELL_SIZE * 4
     _WHEN_COL_WIDTH = style.GRID_CELL_SIZE * 3
     
-    def __init__(self):
+    def __init__(self, activity):
         self.activity = activity;
         hippo.CanvasBox.__init__(self,
                                  spacing=style.DEFAULT_SPACING,

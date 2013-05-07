@@ -34,7 +34,7 @@ NOTHING_TO_SHOW = _('Select a tag')
 
 class MsgList(gtk.HBox):
     
-    def __init__(self, store):
+    def __init__(self, store, activity):
         self._store = store
         self._query = {}
         self._result_set = None
@@ -42,6 +42,7 @@ class MsgList(gtk.HBox):
         self._page_size = 10
         self._last_value = -1
         self._reflow_sid = 0
+	self.activity = activity;
         
         gtk.HBox.__init__(self)
         self.set_flags(gtk.HAS_FOCUS | gtk.CAN_FOCUS)
@@ -141,7 +142,7 @@ class MsgList(gtk.HBox):
 
 
     def create_entry(self):
-        return MessageEntry()
+        return MessageEntry(self.activity)
     
     def update_with_query(self, query):
         logging.debug('update_with_query, page_size = %d' % self._page_size)

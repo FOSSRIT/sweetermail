@@ -21,7 +21,7 @@ class ReadCanvas(gtk.HBox):
         self.taglist.connect('tag-selected', self.__tag_selected_cb)
         self.pack_start(self.taglist, False, False)
         self.taglist.show_all()   
-        self.msglist = MsgList(self._ms)
+        self.msglist = MsgList(self._ms, self.activity)
         self.pack_start(self.msglist)
         self.msglist.show_all()
         self.msglist.set_is_visible(True)
