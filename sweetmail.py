@@ -93,8 +93,8 @@ class mailactivity(activity.Activity):
         toolbox.show()
         
         toolbox.current_toolbar = 1 # default to 'Read' for now
-        bgsrt = BGSRT(self)
-        bgsrt.start()
+        #bgsrt = BGSRT(self)
+        #bgsrt.start()
     def run_bgsrt_once(self):
         bgsrt = BGSRT(self)
         bgsrt.start()
