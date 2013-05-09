@@ -299,7 +299,7 @@ class MsgList(gtk.HBox):
                                 color=black.get_int())
 
 	
-        
+        logging.debug("Messagecontents: "+self._store.get_msg_contents(mobject.msg_id))
         #box.append(icon)
         box.append(who)
         box.append(what)
