@@ -293,12 +293,18 @@ class MsgList(gtk.HBox):
                                 font_desc=style.FONT_NORMAL.get_pango_desc(),
                                 color=black.get_int())
 
+        contents = hippo.CanvasText(text="Message: "+self._store.get_msg(mobject.msg_id),
+                                xalign=hippo.ALIGNMENT_CENTER,
+                                font_desc=style.FONT_NORMAL.get_pango_desc(),
+                                color=black.get_int())
+
 	
         
         #box.append(icon)
         box.append(who)
         box.append(what)
         box.append(when)
+	box.append(contents)
         self._canvas.set_root(box)
         
     def _clear_message(self):
