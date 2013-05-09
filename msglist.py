@@ -23,6 +23,7 @@ from gettext import gettext as _
 from sugar import profile
 from sugar.graphics import style
 from sugar.graphics.icon import CanvasIcon
+import sugar
 
 import query
 
