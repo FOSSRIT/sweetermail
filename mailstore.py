@@ -143,6 +143,9 @@ class MailStore(object):
     
     get_msg = lambda self, key: self.maildir.get(msg_key)
     
+    def get_msg_contents(self, key):
+        return self.maildir.get_message(msg_key).as_string()
+
     def get_msg_info(self, key):
         q = 'SELECT key, flags, hdr_from, hdr_to, hdr_subj, hdr_date FROM metadata WHERE key=?'
         con = self.get_connection()
