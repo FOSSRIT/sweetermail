@@ -293,7 +293,7 @@ class MsgList(gtk.HBox):
 
 	
         
-        box.append(icon)
+        #box.append(icon)
         box.append(who)
         box.append(what)
         box.append(when)
